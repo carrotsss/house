@@ -1,0 +1,6 @@
+2018-08-09 10:27:21.345  [http-nio-8091-exec-1] DEBUG [com.mooc.house.biz.mapper.AgencyMapper.select:] http-nio-8091-exec-1cid - ==>  Preparing: select id , name, address, phone, email, about_us, mobile, web_site from agency 
+2018-08-09 10:27:21.600  [http-nio-8091-exec-1] DEBUG [com.mooc.house.biz.mapper.AgencyMapper.select:] http-nio-8091-exec-1cid - ==> Parameters: 
+2018-08-09 10:27:22.010  [http-nio-8091-exec-1] DEBUG [com.mooc.house.biz.mapper.AgencyMapper.select:] http-nio-8091-exec-1cid - <==      Total: 0
+2018-08-09 10:27:28.791  [http-nio-8091-exec-8] DEBUG [com.mooc.house.biz.mapper.HouseMapper.selectPageHouses:] http-nio-8091-exec-8cid - ==>  Preparing: select a.id, a.type, a.name, a.price, a.images, a.area, a.beds, a.baths, a.rating, a.remarks, a.properties, a.floor_plan, a.tags, a.create_time, a.city_id, a.community_id, a.address, a.state from house a WHERE state = 1 order by a.create_time desc limit ?,? 
+2018-08-09 10:27:28.842  [http-nio-8091-exec-8] DEBUG [com.mooc.house.biz.mapper.HouseMapper.selectPageHouses:] http-nio-8091-exec-8cid - ==> Parameters: 0(Integer), 8(Integer)
+2018-08-09 10:27:29.096  [http-nio-8091-exec-8] DEBUG [com.mooc.house.biz.mapper.HouseMapper.selectPageHouses:] http-nio-8091-exec-8cid - <==      Total: 3

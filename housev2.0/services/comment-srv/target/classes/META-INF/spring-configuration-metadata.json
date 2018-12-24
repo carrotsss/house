@@ -1,0 +1,43 @@
+{
+  "groups": [
+    {
+      "name": "spring.druid",
+      "type": "javax.sql.DataSource",
+      "sourceType": "com.mooc.house.comment.config.DruidConfig",
+      "sourceMethod": "public javax.sql.DataSource dataSource(com.alibaba.druid.filter.Filter) throws java.sql.SQLException"
+    },
+    {
+      "name": "spring.httpclient",
+      "type": "com.mooc.house.comment.config.HttpClientProperties",
+      "sourceType": "com.mooc.house.comment.config.HttpClientProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "spring.httpclient.agent",
+      "type": "java.lang.String",
+      "sourceType": "com.mooc.house.comment.config.HttpClientProperties"
+    },
+    {
+      "name": "spring.httpclient.connect-time-out",
+      "type": "java.lang.Integer",
+      "sourceType": "com.mooc.house.comment.config.HttpClientProperties"
+    },
+    {
+      "name": "spring.httpclient.max-conn-per-route",
+      "type": "java.lang.Integer",
+      "sourceType": "com.mooc.house.comment.config.HttpClientProperties"
+    },
+    {
+      "name": "spring.httpclient.max-conn-totaol",
+      "type": "java.lang.Integer",
+      "sourceType": "com.mooc.house.comment.config.HttpClientProperties"
+    },
+    {
+      "name": "spring.httpclient.socket-time-out",
+      "type": "java.lang.Integer",
+      "sourceType": "com.mooc.house.comment.config.HttpClientProperties"
+    }
+  ],
+  "hints": []
+}

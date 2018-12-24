@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;application-peer.properties&apos; to &apos;eureka_server/src/main/resources&apos;&#x0D;&#x0A;- Original project: &apos;eureka-sever&apos;&#x0D;&#x0A;- Destination element: &apos;eureka_server/src/main/resources&apos;&#x0D;&#x0A;- Original element: &apos;application-peer.properties&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move file" destination="=eureka_server/src\/main\/resources" element1="src/main/resources/application-peer.properties" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1528817255144" units="0" version="1.0"/>
+</session>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1526867484679_0" label="house-parent" name="house-parent">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/house-biz" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/house-common" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/house-web" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/housev1.0" type="4"/>
+</workingSet>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1527213822527_1" label="Window Working Set" name="Aggregate for window 1527213822526"/>
+</workingSetManager>

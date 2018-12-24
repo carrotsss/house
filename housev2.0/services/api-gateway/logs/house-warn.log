@@ -1,0 +1,512 @@
+2018-06-06 09:43:24.377 [main] WARN  [com.netflix.config.sources.URLConfigurationSource:121] maincid - No URLs will be polled as dynamic configuration sources.
+2018-06-06 09:43:42.283 [main] WARN  [org.springframework.boot.starter.redis.RedisStarterDeprecationWarningAutoConfiguration:43] maincid - spring-boot-starter-redis is deprecated as of Spring Boot 1.4, please migrate to spring-boot-starter-data-redis
+2018-06-06 09:43:42.623 [main] WARN  [com.netflix.config.sources.URLConfigurationSource:121] maincid - No URLs will be polled as dynamic configuration sources.
+2018-06-06 09:44:09.846 [main] ERROR [com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient:83] maincid - Request execution error
+com.sun.jersey.api.client.ClientHandlerException: java.net.SocketTimeoutException: Read timed out
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.sun.jersey.api.client.Client.handle(Client.java:652) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource$Builder.get(WebResource.java:509) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.getApplicationsInternal(AbstractJerseyEurekaHttpClient.java:194) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.getApplications(AbstractJerseyEurekaHttpClient.java:165) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:118) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:79) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:119) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1030) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:944) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:444) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:304) ~[eureka-client-1.4.12.jar:1.4.12]
+	at org.springframework.cloud.netflix.eureka.CloudEurekaClient.<init>(CloudEurekaClient.java:51) ~[spring-cloud-netflix-eureka-client-1.2.7.RELEASE.jar:1.2.7.RELEASE]
+	at org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration.eurekaClient(EurekaClientAutoConfiguration.java:192) ~[spring-cloud-netflix-eureka-client-1.2.7.RELEASE.jar:1.2.7.RELEASE]
+	at org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration$$EnhancerBySpringCGLIB$$7b3289a4.CGLIB$eurekaClient$1(<generated>) ~[spring-cloud-netflix-eureka-client-1.2.7.RELEASE.jar:1.2.7.RELEASE]
+	at org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration$$EnhancerBySpringCGLIB$$7b3289a4$$FastClassBySpringCGLIB$$7602c2a0.invoke(<generated>) ~[spring-cloud-netflix-eureka-client-1.2.7.RELEASE.jar:1.2.7.RELEASE]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228) ~[spring-core-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:358) ~[spring-context-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration$$EnhancerBySpringCGLIB$$7b3289a4.eurekaClient(<generated>) ~[spring-cloud-netflix-eureka-client-1.2.7.RELEASE.jar:1.2.7.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_74]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_74]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_74]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_74]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1173) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1067) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$2.getObject(AbstractBeanFactory.java:345) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.getBean(GenericScope.java:359) ~[spring-cloud-context-1.1.9.RELEASE.jar:1.1.9.RELEASE]
+	at org.springframework.cloud.context.scope.GenericScope.get(GenericScope.java:176) ~[spring-cloud-context-1.1.9.RELEASE.jar:1.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:340) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.aop.target.SimpleBeanTargetSource.getTarget(SimpleBeanTargetSource.java:35) ~[spring-aop-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:192) ~[spring-aop-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at com.sun.proxy.$Proxy139.getApplications(Unknown Source) ~[?:?]
+	at org.springframework.cloud.netflix.eureka.EurekaDiscoveryClientConfiguration.maybeInitializeClient(EurekaDiscoveryClientConfiguration.java:120) ~[spring-cloud-netflix-eureka-client-1.2.7.RELEASE.jar:1.2.7.RELEASE]
+	at org.springframework.cloud.netflix.eureka.EurekaDiscoveryClientConfiguration.start(EurekaDiscoveryClientConfiguration.java:97) ~[spring-cloud-netflix-eureka-client-1.2.7.RELEASE.jar:1.2.7.RELEASE]
+	at org.springframework.cloud.netflix.eureka.EurekaDiscoveryClientConfiguration.onApplicationEvent(EurekaDiscoveryClientConfiguration.java:170) ~[spring-cloud-netflix-eureka-client-1.2.7.RELEASE.jar:1.2.7.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_74]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_74]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_74]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_74]
+	at org.springframework.context.event.ApplicationListenerMethodAdapter.doInvoke(ApplicationListenerMethodAdapter.java:253) ~[spring-context-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.context.event.ApplicationListenerMethodAdapter.processEvent(ApplicationListenerMethodAdapter.java:174) ~[spring-context-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.context.event.ApplicationListenerMethodAdapter.onApplicationEvent(ApplicationListenerMethodAdapter.java:137) ~[spring-context-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:167) ~[spring-context-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139) ~[spring-context-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:393) ~[spring-context-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:399) ~[spring-context-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:347) ~[spring-context-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.finishRefresh(EmbeddedWebApplicationContext.java:147) ~[spring-boot-1.4.7.RELEASE.jar:1.4.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:546) ~[spring-context-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) ~[spring-boot-1.4.7.RELEASE.jar:1.4.7.RELEASE]
+	at org.springframework.boot.actuate.autoconfigure.EndpointWebMvcAutoConfiguration.createChildManagementContext(EndpointWebMvcAutoConfiguration.java:193) ~[spring-boot-actuator-1.4.7.RELEASE.jar:1.4.7.RELEASE]
+	at org.springframework.boot.actuate.autoconfigure.EndpointWebMvcAutoConfiguration.afterSingletonsInstantiated(EndpointWebMvcAutoConfiguration.java:156) ~[spring-boot-actuator-1.4.7.RELEASE.jar:1.4.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:781) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543) ~[spring-context-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) ~[spring-boot-1.4.7.RELEASE.jar:1.4.7.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762) ~[spring-boot-1.4.7.RELEASE.jar:1.4.7.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:372) ~[spring-boot-1.4.7.RELEASE.jar:1.4.7.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) ~[spring-boot-1.4.7.RELEASE.jar:1.4.7.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1187) ~[spring-boot-1.4.7.RELEASE.jar:1.4.7.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1176) ~[spring-boot-1.4.7.RELEASE.jar:1.4.7.RELEASE]
+	at com.mooc.house.api.ApiGatewayApplication.main(ApiGatewayApplication.java:30) ~[classes/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_74]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_74]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_74]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_74]
+	at org.springframework.boot.maven.AbstractRunMojo$LaunchRunner.run(AbstractRunMojo.java:496) ~[?:?]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_74]
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method) ~[?:1.8.0_74]
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116) ~[?:1.8.0_74]
+	at java.net.SocketInputStream.read(SocketInputStream.java:170) ~[?:1.8.0_74]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[?:1.8.0_74]
+	at org.apache.http.impl.io.AbstractSessionInputBuffer.fillBuffer(AbstractSessionInputBuffer.java:158) ~[httpcore-4.4.6.jar:4.4.6]
+	at org.apache.http.impl.io.SocketInputBuffer.fillBuffer(SocketInputBuffer.java:82) ~[httpcore-4.4.6.jar:4.4.6]
+	at org.apache.http.impl.io.AbstractSessionInputBuffer.readLine(AbstractSessionInputBuffer.java:271) ~[httpcore-4.4.6.jar:4.4.6]
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259) ~[httpcore-4.4.6.jar:4.4.6]
+	at org.apache.http.impl.AbstractHttpClientConnection.receiveResponseHeader(AbstractHttpClientConnection.java:281) ~[httpcore-4.4.6.jar:4.4.6]
+	at org.apache.http.impl.conn.DefaultClientConnection.receiveResponseHeader(DefaultClientConnection.java:257) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.conn.AbstractClientConnAdapter.receiveResponseHeader(AbstractClientConnAdapter.java:230) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273) ~[httpcore-4.4.6.jar:4.4.6]
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125) ~[httpcore-4.4.6.jar:4.4.6]
+	at org.apache.http.impl.client.DefaultRequestDirector.tryExecute(DefaultRequestDirector.java:684) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:486) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:118) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56) ~[httpclient-4.5.3.jar:4.5.3]
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
+	... 86 more
+2018-06-06 09:44:09.846 [main] WARN  [com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient:129] maincid - Request execution failure
+2018-06-06 09:44:09.995 [main] ERROR [com.netflix.discovery.DiscoveryClient:951] maincid - DiscoveryClient_API-GATEWAY/LAPTOP-ERVHANDT:api-gateway:8080 - was unable to refresh its cache! status = Cannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:111) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1030) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:944) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:444) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:304) ~[eureka-client-1.4.12.jar:1.4.12]
+	at org.springframework.cloud.netflix.eureka.CloudEurekaClient.<init>(CloudEurekaClient.java:51) ~[spring-cloud-netflix-eureka-client-1.2.7.RELEASE.jar:1.2.7.RELEASE]
+	at org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration.eurekaClient(EurekaClientAutoConfiguration.java:192) ~[spring-cloud-netflix-eureka-client-1.2.7.RELEASE.jar:1.2.7.RELEASE]
+	at org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration$$EnhancerBySpringCGLIB$$7b3289a4.CGLIB$eurekaClient$1(<generated>) ~[spring-cloud-netflix-eureka-client-1.2.7.RELEASE.jar:1.2.7.RELEASE]
+	at org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration$$EnhancerBySpringCGLIB$$7b3289a4$$FastClassBySpringCGLIB$$7602c2a0.invoke(<generated>) ~[spring-cloud-netflix-eureka-client-1.2.7.RELEASE.jar:1.2.7.RELEASE]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228) ~[spring-core-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:358) ~[spring-context-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration$$EnhancerBySpringCGLIB$$7b3289a4.eurekaClient(<generated>) ~[spring-cloud-netflix-eureka-client-1.2.7.RELEASE.jar:1.2.7.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_74]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_74]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_74]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_74]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1173) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1067) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$2.getObject(AbstractBeanFactory.java:345) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.getBean(GenericScope.java:359) ~[spring-cloud-context-1.1.9.RELEASE.jar:1.1.9.RELEASE]
+	at org.springframework.cloud.context.scope.GenericScope.get(GenericScope.java:176) ~[spring-cloud-context-1.1.9.RELEASE.jar:1.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:340) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.aop.target.SimpleBeanTargetSource.getTarget(SimpleBeanTargetSource.java:35) ~[spring-aop-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:192) ~[spring-aop-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at com.sun.proxy.$Proxy139.getApplications(Unknown Source) ~[?:?]
+	at org.springframework.cloud.netflix.eureka.EurekaDiscoveryClientConfiguration.maybeInitializeClient(EurekaDiscoveryClientConfiguration.java:120) ~[spring-cloud-netflix-eureka-client-1.2.7.RELEASE.jar:1.2.7.RELEASE]
+	at org.springframework.cloud.netflix.eureka.EurekaDiscoveryClientConfiguration.start(EurekaDiscoveryClientConfiguration.java:97) ~[spring-cloud-netflix-eureka-client-1.2.7.RELEASE.jar:1.2.7.RELEASE]
+	at org.springframework.cloud.netflix.eureka.EurekaDiscoveryClientConfiguration.onApplicationEvent(EurekaDiscoveryClientConfiguration.java:170) ~[spring-cloud-netflix-eureka-client-1.2.7.RELEASE.jar:1.2.7.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_74]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_74]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_74]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_74]
+	at org.springframework.context.event.ApplicationListenerMethodAdapter.doInvoke(ApplicationListenerMethodAdapter.java:253) ~[spring-context-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.context.event.ApplicationListenerMethodAdapter.processEvent(ApplicationListenerMethodAdapter.java:174) ~[spring-context-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.context.event.ApplicationListenerMethodAdapter.onApplicationEvent(ApplicationListenerMethodAdapter.java:137) ~[spring-context-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:167) ~[spring-context-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139) ~[spring-context-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:393) ~[spring-context-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:399) ~[spring-context-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:347) ~[spring-context-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.finishRefresh(EmbeddedWebApplicationContext.java:147) ~[spring-boot-1.4.7.RELEASE.jar:1.4.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:546) ~[spring-context-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) ~[spring-boot-1.4.7.RELEASE.jar:1.4.7.RELEASE]
+	at org.springframework.boot.actuate.autoconfigure.EndpointWebMvcAutoConfiguration.createChildManagementContext(EndpointWebMvcAutoConfiguration.java:193) ~[spring-boot-actuator-1.4.7.RELEASE.jar:1.4.7.RELEASE]
+	at org.springframework.boot.actuate.autoconfigure.EndpointWebMvcAutoConfiguration.afterSingletonsInstantiated(EndpointWebMvcAutoConfiguration.java:156) ~[spring-boot-actuator-1.4.7.RELEASE.jar:1.4.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:781) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543) ~[spring-context-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) ~[spring-boot-1.4.7.RELEASE.jar:1.4.7.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762) ~[spring-boot-1.4.7.RELEASE.jar:1.4.7.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:372) ~[spring-boot-1.4.7.RELEASE.jar:1.4.7.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) ~[spring-boot-1.4.7.RELEASE.jar:1.4.7.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1187) ~[spring-boot-1.4.7.RELEASE.jar:1.4.7.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1176) ~[spring-boot-1.4.7.RELEASE.jar:1.4.7.RELEASE]
+	at com.mooc.house.api.ApiGatewayApplication.main(ApiGatewayApplication.java:30) ~[classes/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_74]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_74]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_74]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_74]
+	at org.springframework.boot.maven.AbstractRunMojo$LaunchRunner.run(AbstractRunMojo.java:496) ~[?:?]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_74]
+2018-06-06 09:44:09.997 [main] WARN  [com.netflix.discovery.DiscoveryClient:325] maincid - Using default backup registry implementation which does not do anything.
+2018-06-06 09:44:14.278 [registrationTask1] WARN  [de.codecentric.boot.admin.client.registration.ApplicationRegistrator:88] registrationTask1cid - Failed to register application as Application [name=api-gateway, managementUrl=http://LAPTOP-ERVHANDT:8023, healthUrl=http://LAPTOP-ERVHANDT:8023/health, serviceUrl=http://LAPTOP-ERVHANDT:8080] at spring-boot-admin ([http://localhost:8070/api/applications]): I/O error on POST request for "http://localhost:8070/api/applications": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2018-06-06 09:44:22.968 [registrationTask1] WARN  [de.codecentric.boot.admin.client.registration.ApplicationRegistrator:88] registrationTask1cid - Failed to register application as Application [name=api-gateway, managementUrl=http://LAPTOP-ERVHANDT:8023, healthUrl=http://LAPTOP-ERVHANDT:8023/health, serviceUrl=http://LAPTOP-ERVHANDT:8080] at spring-boot-admin ([http://localhost:8070/api/applications]): I/O error on POST request for "http://localhost:8070/api/applications": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2018-06-06 09:44:32.971 [registrationTask1] WARN  [de.codecentric.boot.admin.client.registration.ApplicationRegistrator:88] registrationTask1cid - Failed to register application as Application [name=api-gateway, managementUrl=http://LAPTOP-ERVHANDT:8023, healthUrl=http://LAPTOP-ERVHANDT:8023/health, serviceUrl=http://LAPTOP-ERVHANDT:8080] at spring-boot-admin ([http://localhost:8070/api/applications]): I/O error on POST request for "http://localhost:8070/api/applications": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2018-06-06 09:44:41.100 [DiscoveryClient-CacheRefreshExecutor-0] WARN  [com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient:127] DiscoveryClient-CacheRefreshExecutor-0cid - Request execution failure with status code 404; retrying on another server if available
+2018-06-06 09:44:41.101 [DiscoveryClient-CacheRefreshExecutor-0] ERROR [com.netflix.discovery.DiscoveryClient:951] DiscoveryClient-CacheRefreshExecutor-0cid - DiscoveryClient_API-GATEWAY/LAPTOP-ERVHANDT:api-gateway:8080 - was unable to refresh its cache! status = Cannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:111) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1030) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:944) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1468) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1435) ~[eureka-client-1.4.12.jar:1.4.12]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_74]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_74]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_74]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_74]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_74]
+2018-06-06 09:44:42.973 [registrationTask1] WARN  [de.codecentric.boot.admin.client.registration.ApplicationRegistrator:88] registrationTask1cid - Failed to register application as Application [name=api-gateway, managementUrl=http://LAPTOP-ERVHANDT:8023, healthUrl=http://LAPTOP-ERVHANDT:8023/health, serviceUrl=http://LAPTOP-ERVHANDT:8080] at spring-boot-admin ([http://localhost:8070/api/applications]): I/O error on POST request for "http://localhost:8070/api/applications": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2018-06-06 09:44:52.971 [registrationTask1] WARN  [de.codecentric.boot.admin.client.registration.ApplicationRegistrator:88] registrationTask1cid - Failed to register application as Application [name=api-gateway, managementUrl=http://LAPTOP-ERVHANDT:8023, healthUrl=http://LAPTOP-ERVHANDT:8023/health, serviceUrl=http://LAPTOP-ERVHANDT:8080] at spring-boot-admin ([http://localhost:8070/api/applications]): I/O error on POST request for "http://localhost:8070/api/applications": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2018-06-06 09:45:02.969 [registrationTask1] WARN  [de.codecentric.boot.admin.client.registration.ApplicationRegistrator:88] registrationTask1cid - Failed to register application as Application [name=api-gateway, managementUrl=http://LAPTOP-ERVHANDT:8023, healthUrl=http://LAPTOP-ERVHANDT:8023/health, serviceUrl=http://LAPTOP-ERVHANDT:8080] at spring-boot-admin ([http://localhost:8070/api/applications]): I/O error on POST request for "http://localhost:8070/api/applications": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2018-06-06 09:45:11.239 [DiscoveryClient-CacheRefreshExecutor-0] WARN  [com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient:127] DiscoveryClient-CacheRefreshExecutor-0cid - Request execution failure with status code 404; retrying on another server if available
+2018-06-06 09:45:11.239 [DiscoveryClient-CacheRefreshExecutor-0] ERROR [com.netflix.discovery.DiscoveryClient:951] DiscoveryClient-CacheRefreshExecutor-0cid - DiscoveryClient_API-GATEWAY/LAPTOP-ERVHANDT:api-gateway:8080 - was unable to refresh its cache! status = Cannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:111) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1030) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:944) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1468) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1435) ~[eureka-client-1.4.12.jar:1.4.12]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_74]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_74]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_74]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_74]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_74]
+2018-06-06 09:45:12.973 [registrationTask1] WARN  [de.codecentric.boot.admin.client.registration.ApplicationRegistrator:88] registrationTask1cid - Failed to register application as Application [name=api-gateway, managementUrl=http://LAPTOP-ERVHANDT:8023, healthUrl=http://LAPTOP-ERVHANDT:8023/health, serviceUrl=http://LAPTOP-ERVHANDT:8080] at spring-boot-admin ([http://localhost:8070/api/applications]): I/O error on POST request for "http://localhost:8070/api/applications": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2018-06-06 09:45:22.977 [registrationTask1] WARN  [de.codecentric.boot.admin.client.registration.ApplicationRegistrator:88] registrationTask1cid - Failed to register application as Application [name=api-gateway, managementUrl=http://LAPTOP-ERVHANDT:8023, healthUrl=http://LAPTOP-ERVHANDT:8023/health, serviceUrl=http://LAPTOP-ERVHANDT:8080] at spring-boot-admin ([http://localhost:8070/api/applications]): I/O error on POST request for "http://localhost:8070/api/applications": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2018-06-06 09:45:32.969 [registrationTask1] WARN  [de.codecentric.boot.admin.client.registration.ApplicationRegistrator:88] registrationTask1cid - Failed to register application as Application [name=api-gateway, managementUrl=http://LAPTOP-ERVHANDT:8023, healthUrl=http://LAPTOP-ERVHANDT:8023/health, serviceUrl=http://LAPTOP-ERVHANDT:8080] at spring-boot-admin ([http://localhost:8070/api/applications]): I/O error on POST request for "http://localhost:8070/api/applications": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2018-06-06 09:45:41.255 [DiscoveryClient-CacheRefreshExecutor-0] WARN  [com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient:127] DiscoveryClient-CacheRefreshExecutor-0cid - Request execution failure with status code 404; retrying on another server if available
+2018-06-06 09:45:41.255 [DiscoveryClient-CacheRefreshExecutor-0] ERROR [com.netflix.discovery.DiscoveryClient:951] DiscoveryClient-CacheRefreshExecutor-0cid - DiscoveryClient_API-GATEWAY/LAPTOP-ERVHANDT:api-gateway:8080 - was unable to refresh its cache! status = Cannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:111) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1030) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:944) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1468) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1435) ~[eureka-client-1.4.12.jar:1.4.12]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_74]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_74]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_74]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_74]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_74]
+2018-06-06 09:45:42.973 [registrationTask1] WARN  [de.codecentric.boot.admin.client.registration.ApplicationRegistrator:88] registrationTask1cid - Failed to register application as Application [name=api-gateway, managementUrl=http://LAPTOP-ERVHANDT:8023, healthUrl=http://LAPTOP-ERVHANDT:8023/health, serviceUrl=http://LAPTOP-ERVHANDT:8080] at spring-boot-admin ([http://localhost:8070/api/applications]): I/O error on POST request for "http://localhost:8070/api/applications": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2018-06-06 09:45:52.969 [registrationTask1] WARN  [de.codecentric.boot.admin.client.registration.ApplicationRegistrator:88] registrationTask1cid - Failed to register application as Application [name=api-gateway, managementUrl=http://LAPTOP-ERVHANDT:8023, healthUrl=http://LAPTOP-ERVHANDT:8023/health, serviceUrl=http://LAPTOP-ERVHANDT:8080] at spring-boot-admin ([http://localhost:8070/api/applications]): I/O error on POST request for "http://localhost:8070/api/applications": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2018-06-06 09:46:02.969 [registrationTask1] WARN  [de.codecentric.boot.admin.client.registration.ApplicationRegistrator:88] registrationTask1cid - Failed to register application as Application [name=api-gateway, managementUrl=http://LAPTOP-ERVHANDT:8023, healthUrl=http://LAPTOP-ERVHANDT:8023/health, serviceUrl=http://LAPTOP-ERVHANDT:8080] at spring-boot-admin ([http://localhost:8070/api/applications]): I/O error on POST request for "http://localhost:8070/api/applications": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2018-06-06 09:46:11.269 [DiscoveryClient-CacheRefreshExecutor-0] WARN  [com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient:127] DiscoveryClient-CacheRefreshExecutor-0cid - Request execution failure with status code 404; retrying on another server if available
+2018-06-06 09:46:11.269 [DiscoveryClient-CacheRefreshExecutor-0] ERROR [com.netflix.discovery.DiscoveryClient:951] DiscoveryClient-CacheRefreshExecutor-0cid - DiscoveryClient_API-GATEWAY/LAPTOP-ERVHANDT:api-gateway:8080 - was unable to refresh its cache! status = Cannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:111) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1030) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:944) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1468) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1435) ~[eureka-client-1.4.12.jar:1.4.12]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_74]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_74]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_74]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_74]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_74]
+2018-06-06 09:46:12.971 [registrationTask1] WARN  [de.codecentric.boot.admin.client.registration.ApplicationRegistrator:88] registrationTask1cid - Failed to register application as Application [name=api-gateway, managementUrl=http://LAPTOP-ERVHANDT:8023, healthUrl=http://LAPTOP-ERVHANDT:8023/health, serviceUrl=http://LAPTOP-ERVHANDT:8080] at spring-boot-admin ([http://localhost:8070/api/applications]): I/O error on POST request for "http://localhost:8070/api/applications": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2018-06-06 09:46:22.969 [registrationTask1] WARN  [de.codecentric.boot.admin.client.registration.ApplicationRegistrator:88] registrationTask1cid - Failed to register application as Application [name=api-gateway, managementUrl=http://LAPTOP-ERVHANDT:8023, healthUrl=http://LAPTOP-ERVHANDT:8023/health, serviceUrl=http://LAPTOP-ERVHANDT:8080] at spring-boot-admin ([http://localhost:8070/api/applications]): I/O error on POST request for "http://localhost:8070/api/applications": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2018-06-06 09:46:32.969 [registrationTask1] WARN  [de.codecentric.boot.admin.client.registration.ApplicationRegistrator:88] registrationTask1cid - Failed to register application as Application [name=api-gateway, managementUrl=http://LAPTOP-ERVHANDT:8023, healthUrl=http://LAPTOP-ERVHANDT:8023/health, serviceUrl=http://LAPTOP-ERVHANDT:8080] at spring-boot-admin ([http://localhost:8070/api/applications]): I/O error on POST request for "http://localhost:8070/api/applications": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2018-06-06 09:46:41.284 [DiscoveryClient-CacheRefreshExecutor-0] WARN  [com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient:127] DiscoveryClient-CacheRefreshExecutor-0cid - Request execution failure with status code 404; retrying on another server if available
+2018-06-06 09:46:41.284 [DiscoveryClient-CacheRefreshExecutor-0] ERROR [com.netflix.discovery.DiscoveryClient:951] DiscoveryClient-CacheRefreshExecutor-0cid - DiscoveryClient_API-GATEWAY/LAPTOP-ERVHANDT:api-gateway:8080 - was unable to refresh its cache! status = Cannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:111) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1030) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:944) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1468) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1435) ~[eureka-client-1.4.12.jar:1.4.12]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_74]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_74]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_74]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_74]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_74]
+2018-06-06 09:46:42.970 [registrationTask1] WARN  [de.codecentric.boot.admin.client.registration.ApplicationRegistrator:88] registrationTask1cid - Failed to register application as Application [name=api-gateway, managementUrl=http://LAPTOP-ERVHANDT:8023, healthUrl=http://LAPTOP-ERVHANDT:8023/health, serviceUrl=http://LAPTOP-ERVHANDT:8080] at spring-boot-admin ([http://localhost:8070/api/applications]): I/O error on POST request for "http://localhost:8070/api/applications": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2018-06-06 09:46:52.970 [registrationTask1] WARN  [de.codecentric.boot.admin.client.registration.ApplicationRegistrator:88] registrationTask1cid - Failed to register application as Application [name=api-gateway, managementUrl=http://LAPTOP-ERVHANDT:8023, healthUrl=http://LAPTOP-ERVHANDT:8023/health, serviceUrl=http://LAPTOP-ERVHANDT:8080] at spring-boot-admin ([http://localhost:8070/api/applications]): I/O error on POST request for "http://localhost:8070/api/applications": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2018-06-06 09:47:02.968 [registrationTask1] WARN  [de.codecentric.boot.admin.client.registration.ApplicationRegistrator:88] registrationTask1cid - Failed to register application as Application [name=api-gateway, managementUrl=http://LAPTOP-ERVHANDT:8023, healthUrl=http://LAPTOP-ERVHANDT:8023/health, serviceUrl=http://LAPTOP-ERVHANDT:8080] at spring-boot-admin ([http://localhost:8070/api/applications]): I/O error on POST request for "http://localhost:8070/api/applications": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2018-06-06 09:47:11.297 [DiscoveryClient-CacheRefreshExecutor-0] WARN  [com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient:127] DiscoveryClient-CacheRefreshExecutor-0cid - Request execution failure with status code 404; retrying on another server if available
+2018-06-06 09:47:11.297 [DiscoveryClient-CacheRefreshExecutor-0] ERROR [com.netflix.discovery.DiscoveryClient:951] DiscoveryClient-CacheRefreshExecutor-0cid - DiscoveryClient_API-GATEWAY/LAPTOP-ERVHANDT:api-gateway:8080 - was unable to refresh its cache! status = Cannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:111) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1030) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:944) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1468) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1435) ~[eureka-client-1.4.12.jar:1.4.12]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_74]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_74]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_74]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_74]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_74]
+2018-06-06 09:47:12.972 [registrationTask1] WARN  [de.codecentric.boot.admin.client.registration.ApplicationRegistrator:88] registrationTask1cid - Failed to register application as Application [name=api-gateway, managementUrl=http://LAPTOP-ERVHANDT:8023, healthUrl=http://LAPTOP-ERVHANDT:8023/health, serviceUrl=http://LAPTOP-ERVHANDT:8080] at spring-boot-admin ([http://localhost:8070/api/applications]): I/O error on POST request for "http://localhost:8070/api/applications": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2018-06-06 09:47:22.976 [registrationTask1] WARN  [de.codecentric.boot.admin.client.registration.ApplicationRegistrator:88] registrationTask1cid - Failed to register application as Application [name=api-gateway, managementUrl=http://LAPTOP-ERVHANDT:8023, healthUrl=http://LAPTOP-ERVHANDT:8023/health, serviceUrl=http://LAPTOP-ERVHANDT:8080] at spring-boot-admin ([http://localhost:8070/api/applications]): I/O error on POST request for "http://localhost:8070/api/applications": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2018-06-06 09:47:32.972 [registrationTask1] WARN  [de.codecentric.boot.admin.client.registration.ApplicationRegistrator:88] registrationTask1cid - Failed to register application as Application [name=api-gateway, managementUrl=http://LAPTOP-ERVHANDT:8023, healthUrl=http://LAPTOP-ERVHANDT:8023/health, serviceUrl=http://LAPTOP-ERVHANDT:8080] at spring-boot-admin ([http://localhost:8070/api/applications]): I/O error on POST request for "http://localhost:8070/api/applications": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2018-06-06 09:47:41.318 [DiscoveryClient-CacheRefreshExecutor-0] WARN  [com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient:127] DiscoveryClient-CacheRefreshExecutor-0cid - Request execution failure with status code 404; retrying on another server if available
+2018-06-06 09:47:41.318 [DiscoveryClient-CacheRefreshExecutor-0] ERROR [com.netflix.discovery.DiscoveryClient:951] DiscoveryClient-CacheRefreshExecutor-0cid - DiscoveryClient_API-GATEWAY/LAPTOP-ERVHANDT:api-gateway:8080 - was unable to refresh its cache! status = Cannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:111) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1030) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:944) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1468) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1435) ~[eureka-client-1.4.12.jar:1.4.12]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_74]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_74]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_74]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_74]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_74]
+2018-06-06 09:47:42.974 [registrationTask1] WARN  [de.codecentric.boot.admin.client.registration.ApplicationRegistrator:88] registrationTask1cid - Failed to register application as Application [name=api-gateway, managementUrl=http://LAPTOP-ERVHANDT:8023, healthUrl=http://LAPTOP-ERVHANDT:8023/health, serviceUrl=http://LAPTOP-ERVHANDT:8080] at spring-boot-admin ([http://localhost:8070/api/applications]): I/O error on POST request for "http://localhost:8070/api/applications": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2018-06-06 09:47:52.972 [registrationTask1] WARN  [de.codecentric.boot.admin.client.registration.ApplicationRegistrator:88] registrationTask1cid - Failed to register application as Application [name=api-gateway, managementUrl=http://LAPTOP-ERVHANDT:8023, healthUrl=http://LAPTOP-ERVHANDT:8023/health, serviceUrl=http://LAPTOP-ERVHANDT:8080] at spring-boot-admin ([http://localhost:8070/api/applications]): I/O error on POST request for "http://localhost:8070/api/applications": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2018-06-06 09:48:02.970 [registrationTask1] WARN  [de.codecentric.boot.admin.client.registration.ApplicationRegistrator:88] registrationTask1cid - Failed to register application as Application [name=api-gateway, managementUrl=http://LAPTOP-ERVHANDT:8023, healthUrl=http://LAPTOP-ERVHANDT:8023/health, serviceUrl=http://LAPTOP-ERVHANDT:8080] at spring-boot-admin ([http://localhost:8070/api/applications]): I/O error on POST request for "http://localhost:8070/api/applications": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2018-06-06 09:48:11.329 [DiscoveryClient-CacheRefreshExecutor-0] WARN  [com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient:127] DiscoveryClient-CacheRefreshExecutor-0cid - Request execution failure with status code 404; retrying on another server if available
+2018-06-06 09:48:11.329 [DiscoveryClient-CacheRefreshExecutor-0] ERROR [com.netflix.discovery.DiscoveryClient:951] DiscoveryClient-CacheRefreshExecutor-0cid - DiscoveryClient_API-GATEWAY/LAPTOP-ERVHANDT:api-gateway:8080 - was unable to refresh its cache! status = Cannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:111) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1030) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:944) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1468) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1435) ~[eureka-client-1.4.12.jar:1.4.12]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_74]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_74]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_74]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_74]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_74]
+2018-06-06 09:48:12.972 [registrationTask1] WARN  [de.codecentric.boot.admin.client.registration.ApplicationRegistrator:88] registrationTask1cid - Failed to register application as Application [name=api-gateway, managementUrl=http://LAPTOP-ERVHANDT:8023, healthUrl=http://LAPTOP-ERVHANDT:8023/health, serviceUrl=http://LAPTOP-ERVHANDT:8080] at spring-boot-admin ([http://localhost:8070/api/applications]): I/O error on POST request for "http://localhost:8070/api/applications": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2018-06-06 09:48:22.970 [registrationTask1] WARN  [de.codecentric.boot.admin.client.registration.ApplicationRegistrator:88] registrationTask1cid - Failed to register application as Application [name=api-gateway, managementUrl=http://LAPTOP-ERVHANDT:8023, healthUrl=http://LAPTOP-ERVHANDT:8023/health, serviceUrl=http://LAPTOP-ERVHANDT:8080] at spring-boot-admin ([http://localhost:8070/api/applications]): I/O error on POST request for "http://localhost:8070/api/applications": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2018-06-06 09:48:32.969 [registrationTask1] WARN  [de.codecentric.boot.admin.client.registration.ApplicationRegistrator:88] registrationTask1cid - Failed to register application as Application [name=api-gateway, managementUrl=http://LAPTOP-ERVHANDT:8023, healthUrl=http://LAPTOP-ERVHANDT:8023/health, serviceUrl=http://LAPTOP-ERVHANDT:8080] at spring-boot-admin ([http://localhost:8070/api/applications]): I/O error on POST request for "http://localhost:8070/api/applications": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2018-06-06 09:48:41.357 [DiscoveryClient-CacheRefreshExecutor-0] WARN  [com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient:127] DiscoveryClient-CacheRefreshExecutor-0cid - Request execution failure with status code 404; retrying on another server if available
+2018-06-06 09:48:41.357 [DiscoveryClient-CacheRefreshExecutor-0] ERROR [com.netflix.discovery.DiscoveryClient:951] DiscoveryClient-CacheRefreshExecutor-0cid - DiscoveryClient_API-GATEWAY/LAPTOP-ERVHANDT:api-gateway:8080 - was unable to refresh its cache! status = Cannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:111) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1030) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:944) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1468) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1435) ~[eureka-client-1.4.12.jar:1.4.12]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_74]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_74]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_74]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_74]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_74]
+2018-06-06 09:48:42.972 [registrationTask1] WARN  [de.codecentric.boot.admin.client.registration.ApplicationRegistrator:88] registrationTask1cid - Failed to register application as Application [name=api-gateway, managementUrl=http://LAPTOP-ERVHANDT:8023, healthUrl=http://LAPTOP-ERVHANDT:8023/health, serviceUrl=http://LAPTOP-ERVHANDT:8080] at spring-boot-admin ([http://localhost:8070/api/applications]): I/O error on POST request for "http://localhost:8070/api/applications": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2018-06-06 09:48:52.969 [registrationTask1] WARN  [de.codecentric.boot.admin.client.registration.ApplicationRegistrator:88] registrationTask1cid - Failed to register application as Application [name=api-gateway, managementUrl=http://LAPTOP-ERVHANDT:8023, healthUrl=http://LAPTOP-ERVHANDT:8023/health, serviceUrl=http://LAPTOP-ERVHANDT:8080] at spring-boot-admin ([http://localhost:8070/api/applications]): I/O error on POST request for "http://localhost:8070/api/applications": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2018-06-06 09:49:02.970 [registrationTask1] WARN  [de.codecentric.boot.admin.client.registration.ApplicationRegistrator:88] registrationTask1cid - Failed to register application as Application [name=api-gateway, managementUrl=http://LAPTOP-ERVHANDT:8023, healthUrl=http://LAPTOP-ERVHANDT:8023/health, serviceUrl=http://LAPTOP-ERVHANDT:8080] at spring-boot-admin ([http://localhost:8070/api/applications]): I/O error on POST request for "http://localhost:8070/api/applications": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2018-06-06 09:49:11.384 [DiscoveryClient-CacheRefreshExecutor-0] WARN  [com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient:127] DiscoveryClient-CacheRefreshExecutor-0cid - Request execution failure with status code 404; retrying on another server if available
+2018-06-06 09:49:11.384 [DiscoveryClient-CacheRefreshExecutor-0] ERROR [com.netflix.discovery.DiscoveryClient:951] DiscoveryClient-CacheRefreshExecutor-0cid - DiscoveryClient_API-GATEWAY/LAPTOP-ERVHANDT:api-gateway:8080 - was unable to refresh its cache! status = Cannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:111) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1030) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:944) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1468) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1435) ~[eureka-client-1.4.12.jar:1.4.12]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_74]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_74]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_74]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_74]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_74]
+2018-06-06 09:49:12.969 [registrationTask1] WARN  [de.codecentric.boot.admin.client.registration.ApplicationRegistrator:88] registrationTask1cid - Failed to register application as Application [name=api-gateway, managementUrl=http://LAPTOP-ERVHANDT:8023, healthUrl=http://LAPTOP-ERVHANDT:8023/health, serviceUrl=http://LAPTOP-ERVHANDT:8080] at spring-boot-admin ([http://localhost:8070/api/applications]): I/O error on POST request for "http://localhost:8070/api/applications": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2018-06-06 09:49:22.973 [registrationTask1] WARN  [de.codecentric.boot.admin.client.registration.ApplicationRegistrator:88] registrationTask1cid - Failed to register application as Application [name=api-gateway, managementUrl=http://LAPTOP-ERVHANDT:8023, healthUrl=http://LAPTOP-ERVHANDT:8023/health, serviceUrl=http://LAPTOP-ERVHANDT:8080] at spring-boot-admin ([http://localhost:8070/api/applications]): I/O error on POST request for "http://localhost:8070/api/applications": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2018-06-06 09:49:32.969 [registrationTask1] WARN  [de.codecentric.boot.admin.client.registration.ApplicationRegistrator:88] registrationTask1cid - Failed to register application as Application [name=api-gateway, managementUrl=http://LAPTOP-ERVHANDT:8023, healthUrl=http://LAPTOP-ERVHANDT:8023/health, serviceUrl=http://LAPTOP-ERVHANDT:8080] at spring-boot-admin ([http://localhost:8070/api/applications]): I/O error on POST request for "http://localhost:8070/api/applications": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2018-06-06 09:49:41.396 [DiscoveryClient-CacheRefreshExecutor-0] WARN  [com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient:127] DiscoveryClient-CacheRefreshExecutor-0cid - Request execution failure with status code 404; retrying on another server if available
+2018-06-06 09:49:41.396 [DiscoveryClient-CacheRefreshExecutor-0] ERROR [com.netflix.discovery.DiscoveryClient:951] DiscoveryClient-CacheRefreshExecutor-0cid - DiscoveryClient_API-GATEWAY/LAPTOP-ERVHANDT:api-gateway:8080 - was unable to refresh its cache! status = Cannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:111) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1030) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:944) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1468) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1435) ~[eureka-client-1.4.12.jar:1.4.12]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_74]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_74]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_74]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_74]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_74]
+2018-06-06 09:49:42.969 [registrationTask1] WARN  [de.codecentric.boot.admin.client.registration.ApplicationRegistrator:88] registrationTask1cid - Failed to register application as Application [name=api-gateway, managementUrl=http://LAPTOP-ERVHANDT:8023, healthUrl=http://LAPTOP-ERVHANDT:8023/health, serviceUrl=http://LAPTOP-ERVHANDT:8080] at spring-boot-admin ([http://localhost:8070/api/applications]): I/O error on POST request for "http://localhost:8070/api/applications": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2018-06-06 09:49:52.973 [registrationTask1] WARN  [de.codecentric.boot.admin.client.registration.ApplicationRegistrator:88] registrationTask1cid - Failed to register application as Application [name=api-gateway, managementUrl=http://LAPTOP-ERVHANDT:8023, healthUrl=http://LAPTOP-ERVHANDT:8023/health, serviceUrl=http://LAPTOP-ERVHANDT:8080] at spring-boot-admin ([http://localhost:8070/api/applications]): I/O error on POST request for "http://localhost:8070/api/applications": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2018-06-06 09:50:02.972 [registrationTask1] WARN  [de.codecentric.boot.admin.client.registration.ApplicationRegistrator:88] registrationTask1cid - Failed to register application as Application [name=api-gateway, managementUrl=http://LAPTOP-ERVHANDT:8023, healthUrl=http://LAPTOP-ERVHANDT:8023/health, serviceUrl=http://LAPTOP-ERVHANDT:8080] at spring-boot-admin ([http://localhost:8070/api/applications]): I/O error on POST request for "http://localhost:8070/api/applications": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2018-06-06 09:50:11.411 [DiscoveryClient-CacheRefreshExecutor-0] WARN  [com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient:127] DiscoveryClient-CacheRefreshExecutor-0cid - Request execution failure with status code 404; retrying on another server if available
+2018-06-06 09:50:11.411 [DiscoveryClient-CacheRefreshExecutor-0] ERROR [com.netflix.discovery.DiscoveryClient:951] DiscoveryClient-CacheRefreshExecutor-0cid - DiscoveryClient_API-GATEWAY/LAPTOP-ERVHANDT:api-gateway:8080 - was unable to refresh its cache! status = Cannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:111) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1030) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:944) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1468) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1435) ~[eureka-client-1.4.12.jar:1.4.12]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_74]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_74]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_74]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_74]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_74]
+2018-06-06 09:50:12.974 [registrationTask1] WARN  [de.codecentric.boot.admin.client.registration.ApplicationRegistrator:88] registrationTask1cid - Failed to register application as Application [name=api-gateway, managementUrl=http://LAPTOP-ERVHANDT:8023, healthUrl=http://LAPTOP-ERVHANDT:8023/health, serviceUrl=http://LAPTOP-ERVHANDT:8080] at spring-boot-admin ([http://localhost:8070/api/applications]): I/O error on POST request for "http://localhost:8070/api/applications": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2018-06-06 09:50:22.971 [registrationTask1] WARN  [de.codecentric.boot.admin.client.registration.ApplicationRegistrator:88] registrationTask1cid - Failed to register application as Application [name=api-gateway, managementUrl=http://LAPTOP-ERVHANDT:8023, healthUrl=http://LAPTOP-ERVHANDT:8023/health, serviceUrl=http://LAPTOP-ERVHANDT:8080] at spring-boot-admin ([http://localhost:8070/api/applications]): I/O error on POST request for "http://localhost:8070/api/applications": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2018-06-06 09:50:32.982 [registrationTask1] WARN  [de.codecentric.boot.admin.client.registration.ApplicationRegistrator:88] registrationTask1cid - Failed to register application as Application [name=api-gateway, managementUrl=http://LAPTOP-ERVHANDT:8023, healthUrl=http://LAPTOP-ERVHANDT:8023/health, serviceUrl=http://LAPTOP-ERVHANDT:8080] at spring-boot-admin ([http://localhost:8070/api/applications]): I/O error on POST request for "http://localhost:8070/api/applications": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2018-06-06 09:50:41.444 [DiscoveryClient-CacheRefreshExecutor-0] WARN  [com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient:127] DiscoveryClient-CacheRefreshExecutor-0cid - Request execution failure with status code 404; retrying on another server if available
+2018-06-06 09:50:41.444 [DiscoveryClient-CacheRefreshExecutor-0] ERROR [com.netflix.discovery.DiscoveryClient:951] DiscoveryClient-CacheRefreshExecutor-0cid - DiscoveryClient_API-GATEWAY/LAPTOP-ERVHANDT:api-gateway:8080 - was unable to refresh its cache! status = Cannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:111) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1030) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:944) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1468) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1435) ~[eureka-client-1.4.12.jar:1.4.12]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_74]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_74]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_74]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_74]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_74]
+2018-06-06 09:50:42.969 [registrationTask1] WARN  [de.codecentric.boot.admin.client.registration.ApplicationRegistrator:88] registrationTask1cid - Failed to register application as Application [name=api-gateway, managementUrl=http://LAPTOP-ERVHANDT:8023, healthUrl=http://LAPTOP-ERVHANDT:8023/health, serviceUrl=http://LAPTOP-ERVHANDT:8080] at spring-boot-admin ([http://localhost:8070/api/applications]): I/O error on POST request for "http://localhost:8070/api/applications": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2018-06-06 09:50:52.973 [registrationTask1] WARN  [de.codecentric.boot.admin.client.registration.ApplicationRegistrator:88] registrationTask1cid - Failed to register application as Application [name=api-gateway, managementUrl=http://LAPTOP-ERVHANDT:8023, healthUrl=http://LAPTOP-ERVHANDT:8023/health, serviceUrl=http://LAPTOP-ERVHANDT:8080] at spring-boot-admin ([http://localhost:8070/api/applications]): I/O error on POST request for "http://localhost:8070/api/applications": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2018-06-06 09:51:02.970 [registrationTask1] WARN  [de.codecentric.boot.admin.client.registration.ApplicationRegistrator:88] registrationTask1cid - Failed to register application as Application [name=api-gateway, managementUrl=http://LAPTOP-ERVHANDT:8023, healthUrl=http://LAPTOP-ERVHANDT:8023/health, serviceUrl=http://LAPTOP-ERVHANDT:8080] at spring-boot-admin ([http://localhost:8070/api/applications]): I/O error on POST request for "http://localhost:8070/api/applications": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2018-06-06 09:51:11.453 [DiscoveryClient-CacheRefreshExecutor-0] WARN  [com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient:127] DiscoveryClient-CacheRefreshExecutor-0cid - Request execution failure with status code 404; retrying on another server if available
+2018-06-06 09:51:11.454 [DiscoveryClient-CacheRefreshExecutor-0] ERROR [com.netflix.discovery.DiscoveryClient:951] DiscoveryClient-CacheRefreshExecutor-0cid - DiscoveryClient_API-GATEWAY/LAPTOP-ERVHANDT:api-gateway:8080 - was unable to refresh its cache! status = Cannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:111) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1030) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:944) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1468) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1435) ~[eureka-client-1.4.12.jar:1.4.12]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_74]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_74]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_74]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_74]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_74]
+2018-06-06 09:51:12.969 [registrationTask1] WARN  [de.codecentric.boot.admin.client.registration.ApplicationRegistrator:88] registrationTask1cid - Failed to register application as Application [name=api-gateway, managementUrl=http://LAPTOP-ERVHANDT:8023, healthUrl=http://LAPTOP-ERVHANDT:8023/health, serviceUrl=http://LAPTOP-ERVHANDT:8080] at spring-boot-admin ([http://localhost:8070/api/applications]): I/O error on POST request for "http://localhost:8070/api/applications": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2018-06-06 09:51:22.977 [registrationTask1] WARN  [de.codecentric.boot.admin.client.registration.ApplicationRegistrator:88] registrationTask1cid - Failed to register application as Application [name=api-gateway, managementUrl=http://LAPTOP-ERVHANDT:8023, healthUrl=http://LAPTOP-ERVHANDT:8023/health, serviceUrl=http://LAPTOP-ERVHANDT:8080] at spring-boot-admin ([http://localhost:8070/api/applications]): I/O error on POST request for "http://localhost:8070/api/applications": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2018-06-06 09:51:32.970 [registrationTask1] WARN  [de.codecentric.boot.admin.client.registration.ApplicationRegistrator:88] registrationTask1cid - Failed to register application as Application [name=api-gateway, managementUrl=http://LAPTOP-ERVHANDT:8023, healthUrl=http://LAPTOP-ERVHANDT:8023/health, serviceUrl=http://LAPTOP-ERVHANDT:8080] at spring-boot-admin ([http://localhost:8070/api/applications]): I/O error on POST request for "http://localhost:8070/api/applications": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2018-06-06 09:51:41.607 [DiscoveryClient-CacheRefreshExecutor-0] WARN  [com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient:127] DiscoveryClient-CacheRefreshExecutor-0cid - Request execution failure with status code 404; retrying on another server if available
+2018-06-06 09:51:41.607 [DiscoveryClient-CacheRefreshExecutor-0] ERROR [com.netflix.discovery.DiscoveryClient:951] DiscoveryClient-CacheRefreshExecutor-0cid - DiscoveryClient_API-GATEWAY/LAPTOP-ERVHANDT:api-gateway:8080 - was unable to refresh its cache! status = Cannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:111) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1030) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:944) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1468) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1435) ~[eureka-client-1.4.12.jar:1.4.12]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_74]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_74]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_74]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_74]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_74]
+2018-06-06 09:51:42.970 [registrationTask1] WARN  [de.codecentric.boot.admin.client.registration.ApplicationRegistrator:88] registrationTask1cid - Failed to register application as Application [name=api-gateway, managementUrl=http://LAPTOP-ERVHANDT:8023, healthUrl=http://LAPTOP-ERVHANDT:8023/health, serviceUrl=http://LAPTOP-ERVHANDT:8080] at spring-boot-admin ([http://localhost:8070/api/applications]): I/O error on POST request for "http://localhost:8070/api/applications": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2018-06-06 09:51:52.970 [registrationTask1] WARN  [de.codecentric.boot.admin.client.registration.ApplicationRegistrator:88] registrationTask1cid - Failed to register application as Application [name=api-gateway, managementUrl=http://LAPTOP-ERVHANDT:8023, healthUrl=http://LAPTOP-ERVHANDT:8023/health, serviceUrl=http://LAPTOP-ERVHANDT:8080] at spring-boot-admin ([http://localhost:8070/api/applications]): I/O error on POST request for "http://localhost:8070/api/applications": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2018-06-06 09:52:02.972 [registrationTask1] WARN  [de.codecentric.boot.admin.client.registration.ApplicationRegistrator:88] registrationTask1cid - Failed to register application as Application [name=api-gateway, managementUrl=http://LAPTOP-ERVHANDT:8023, healthUrl=http://LAPTOP-ERVHANDT:8023/health, serviceUrl=http://LAPTOP-ERVHANDT:8080] at spring-boot-admin ([http://localhost:8070/api/applications]): I/O error on POST request for "http://localhost:8070/api/applications": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2018-06-06 09:52:11.755 [DiscoveryClient-CacheRefreshExecutor-0] WARN  [com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient:127] DiscoveryClient-CacheRefreshExecutor-0cid - Request execution failure with status code 404; retrying on another server if available
+2018-06-06 09:52:11.755 [DiscoveryClient-CacheRefreshExecutor-0] ERROR [com.netflix.discovery.DiscoveryClient:951] DiscoveryClient-CacheRefreshExecutor-0cid - DiscoveryClient_API-GATEWAY/LAPTOP-ERVHANDT:api-gateway:8080 - was unable to refresh its cache! status = Cannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:111) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1030) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:944) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1468) ~[eureka-client-1.4.12.jar:1.4.12]
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1435) ~[eureka-client-1.4.12.jar:1.4.12]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_74]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_74]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_74]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_74]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_74]
+2018-06-06 09:52:12.987 [registrationTask1] WARN  [de.codecentric.boot.admin.client.registration.ApplicationRegistrator:88] registrationTask1cid - Failed to register application as Application [name=api-gateway, managementUrl=http://LAPTOP-ERVHANDT:8023, healthUrl=http://LAPTOP-ERVHANDT:8023/health, serviceUrl=http://LAPTOP-ERVHANDT:8080] at spring-boot-admin ([http://localhost:8070/api/applications]): I/O error on POST request for "http://localhost:8070/api/applications": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2018-06-06 09:52:22.972 [registrationTask1] WARN  [de.codecentric.boot.admin.client.registration.ApplicationRegistrator:88] registrationTask1cid - Failed to register application as Application [name=api-gateway, managementUrl=http://LAPTOP-ERVHANDT:8023, healthUrl=http://LAPTOP-ERVHANDT:8023/health, serviceUrl=http://LAPTOP-ERVHANDT:8080] at spring-boot-admin ([http://localhost:8070/api/applications]): I/O error on POST request for "http://localhost:8070/api/applications": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2018-06-06 09:52:32.969 [registrationTask1] WARN  [de.codecentric.boot.admin.client.registration.ApplicationRegistrator:88] registrationTask1cid - Failed to register application as Application [name=api-gateway, managementUrl=http://LAPTOP-ERVHANDT:8023, healthUrl=http://LAPTOP-ERVHANDT:8023/health, serviceUrl=http://LAPTOP-ERVHANDT:8080] at spring-boot-admin ([http://localhost:8070/api/applications]): I/O error on POST request for "http://localhost:8070/api/applications": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect

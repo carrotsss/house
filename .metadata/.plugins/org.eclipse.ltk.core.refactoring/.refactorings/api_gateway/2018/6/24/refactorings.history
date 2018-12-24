@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;com.bcw.house.api.config&apos; to &apos;user-service/src/main/java&apos;&#x0D;&#x0A;- Original project: &apos;api_gateway&apos;&#x0D;&#x0A;- Destination element: &apos;user-service/src/main/java&apos;&#x0D;&#x0A;- Original element: &apos;api_gateway/src/main/java/com.bcw.house.api.config&apos;" description="Copy package" destination="=user-service/src\/main\/java" element1="/src\/main\/java&lt;com.bcw.house.api.config" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1528791739836" version="1.0"/>
+</session>

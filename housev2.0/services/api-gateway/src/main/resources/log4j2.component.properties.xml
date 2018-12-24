@@ -1,0 +1,5 @@
+AsynLogger.RingBufferSize=10000
+AsynLoggerConfig.RingBufferSize=10000
+
+log4j2.AsynQueueFullPolicy=Discard
+log4j2.DiscardThreshold=DEBUG

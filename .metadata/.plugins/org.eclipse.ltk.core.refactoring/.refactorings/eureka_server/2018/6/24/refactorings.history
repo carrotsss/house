@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;application-peer.properties&apos; to &apos;eureka-sever/src/main/resources&apos;&#x0D;&#x0A;- Original project: &apos;eureka_server&apos;&#x0D;&#x0A;- Destination element: &apos;eureka-sever/src/main/resources&apos;&#x0D;&#x0A;- Original element: &apos;application-peer.properties&apos;" description="Copy file" destination="=eureka-sever/src\/main\/resources" element1="src/main/resources/application-peer.properties" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1528817267744" units="0" version="1.0"/>
+</session>

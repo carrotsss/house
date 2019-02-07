@@ -1,2 +1,2 @@
 # house
-springcloud租房
+springcloud http way
